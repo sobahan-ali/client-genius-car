@@ -3,14 +3,19 @@ import { Link } from 'react-router-dom';
 import login from '../../assets/images/login/login.svg'
 
 const Login = () => {
+
+    const handleLogin = (e) => {
+        e.preventDefault();
+
+    }
     return (
         <div className="hero">
             <div className="hero-content flex-col lg:flex-row">
                 <div className=" w-1/2">
                     <img className='w-3/4' src={login} alt="" />
                 </div>
-                <div className="card flex-shrink-0 w-1/2 shadow-2xl bg-base-100">
-                    <form className="card-body">
+                <div className="card flex-shrink-0 w-1/2 shadow-2xl bg-base-100 py-10">
+                    <form onSubmit={handleLogin} className="card-body">
                         <h1 className="text-5xl font-bold">Login</h1>
                         <div className="form-control">
                             <label className="label">
@@ -31,6 +36,7 @@ const Login = () => {
                             <input className="btn btn-primary" type="submit" value="Login" />
                         </div>
                     </form>
+                    <p className='text-center'>Are you New Please <Link className='text-orange-600' to='/signup'>Signup</Link></p>
                 </div>
             </div>
         </div>
